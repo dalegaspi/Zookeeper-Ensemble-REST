@@ -1,0 +1,27 @@
+
+port: 2181
+envs:
+  proda:
+    members:
+      - name: zk01a
+        ip: 10.44.150.11
+      - name: zk02a
+        ip: 10.44.150.12
+      - name: zk03a
+        ip: 10.44.151.13
+      - name: zk04a
+        ip: 10.44.151.14
+      - name: zk05a
+        ip: 10.44.153.15
+  prodb:
+    members:
+      - name: zk01b
+        ip: 10.44.150.21
+      - name: zk02b
+        ip: 10.44.150.22
+      - name: zk03b
+        ip: 10.44.151.23
+      - name: zk04b
+        ip: 10.44.151.24
+      - name: zk05b
+        ip: 10.44.153.25

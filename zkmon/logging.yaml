@@ -1,0 +1,31 @@
+version: 1
+formatters:
+  simpleFormater:
+    format: '%(asctime)s - %(levelname)s: %(message)s'
+    datefmt: '%Y/%m/%d %H:%M:%S'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: simpleFormater
+    level: DEBUG
+    stream: ext://sys.stderr
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: simpleFormater
+    level: DEBUG
+    filename: zkmon.log
+    maxBytes: 1048576
+    backupCount: 10
+
+loggers:
+  clogger:
+    level: DEBUG
+    handlers: [console]
+  flogger:
+    level: WARNING
+    handlers: [file]
+
+root:
+    level: DEBUG
+    handlers: [console, file]
